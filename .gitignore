@@ -1,0 +1,63 @@
+.env*
+!.env.example
+**/.env*
+!**/.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+dist/
+frontend/*.tsbuildinfo
+data/*.sqlite3
+data/*.sqlite3-*
+data/uploads/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+.DS_Store
+/PROJECT_STATUS.md
+/AI_prompts.md
+
+# Local sessions, browser profiles, and temporary browser automation.
+.auth/
+playwright-report/
+test-results/
+browser-profile/
+output/*.mjs
+output/fetch_official_sources.py
+output/report_print_preview/
+
+# Keep local-user-specific checks out of the public project. The HTML
+# deliverables embed their own evidence.
+output/final_db_verification.json
+
+# Publish only the saved evidence cited by the report; ignore browser tooling,
+# local captures, and unrelated screenshots by default.
+output/*
+!output/build_report.py
+!output/run_context_ablation.py
+!output/baseline_efficient_comparison.json
+!output/cost_calculations.json
+!output/edge_checks.json
+!output/focused_followup_browser_check.json
+!output/frontend_build.txt
+!output/planner_scope_results.json
+!output/pytest_results.txt
+!output/refinement_verification.json
+!output/safety_tests.json
+!output/usage.jsonl
+!output/workflow_results.json
+!output/screenshots/
+output/screenshots/*
+!output/screenshots/refined-home-final.png
+!output/screenshots/refined-filter-results-final.png
+!output/screenshots/report-plan-detail.png
+!output/screenshots/focused-reservation-no-appointment-card.png
+!output/screenshots/report-date-check.png
+!output/screenshots/focused-donation-guide-yale-swap-room-card.png

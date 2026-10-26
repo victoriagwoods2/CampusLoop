@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26",
+  "scope": "Only the updated reservation and Donation Guide screens/actions; tests used fictional seeded demo accounts in a disposable SQLite database.",
+  "results": {
+    "request_and_accept_without_appointment": "Passed. A recipient request included a proposed date/time; giver acceptance without explicit agreement showed “Reserved — pickup time not yet agreed,” the recipient proposal, the listing availability window, and the general meeting area separately.",
+    "explicit_appointment_agreement": "Passed. Giver explicitly accepted the recipient-proposed Aug 3, 2027 at 15:30 appointment. The accepted card showed it as Pickup appointment and kept the listing availability and general area distinct.",
+    "role_specific_physical_exchange_confirmations": "Passed with fictional records. Recipient used “I have received the item.” and giver used “I have handed over the item.” Test database reached completed; test listing quantity became 0 and its need became fulfilled. No physical exchange occurred.",
+    "success_notification_layout": "Passed. Browser geometry check confirmed the notice begins below the header and ends before main content.",
+    "swap_room_resource": "Passed. Donation Guide displayed 533 Prospect Street, basement level; all five commonly exchanged categories; Yale Connect schedule note; contact email; private-housing eligibility confirmation caveat; and no-guaranteed-acceptance wording. Acceptance remained marked as needing verification.",
+    "javascript_errors": [],
+    "legacy_generic_pickup_value": "Passed. On a seeded accepted reservation whose legacy pickup_window is the generic value “Afternoons,” the card shows “Reserved — pickup time not yet agreed,” the listing availability window, and the general meeting area without falsely labeling Afternoons as a recipient-proposed appointment."
+  },
+  "screenshots": [
+    "focused-reservation-no-appointment.png",
+    "focused-reservation-agreed-appointment.png",
+    "focused-handoffs-completed.png",
+    "focused-donation-guide-yale-swap-room.png",
+    "focused-reservation-no-appointment-card.png",
+    "focused-reservation-agreed-appointment-card.png",
+    "focused-handoffs-completed-card.png",
+    "focused-donation-guide-yale-swap-room-card.png",
+    "focused-legacy-reservation-no-appointment.png"
+  ],
+  "limitations": "The separate real-student usability test remains pending. The browser scenario is a software workflow check in a disposable fictional database, not participant research or a real pickup."
+}

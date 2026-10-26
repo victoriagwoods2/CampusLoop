@@ -1,0 +1,117 @@
+{
+  "experiment": "One-shot context-filtering ablation; not a production planner run.",
+  "recorded_at_local": "2026-10-25T18:29:21.078831-04:00",
+  "model": "gpt-6-luna",
+  "cases": [
+    {
+      "case_id": "valid_lamp",
+      "listing_id": "demo-lamp",
+      "need_id": "demo-need-lamp",
+      "expected_listing_id": "demo-lamp"
+    },
+    {
+      "case_id": "date_mismatch",
+      "listing_id": "demo-bookcase",
+      "need_id": "demo-need-bookcase",
+      "expected_listing_id": null
+    },
+    {
+      "case_id": "transport_conflict",
+      "listing_id": "demo-sofa",
+      "need_id": "demo-need-bookcase",
+      "expected_listing_id": null
+    },
+    {
+      "case_id": "reserved_item",
+      "listing_id": "demo-reserved",
+      "need_id": "demo-need-chair",
+      "expected_listing_id": null
+    }
+  ],
+  "method": "Both calls use the same four seed-database scenarios, same instructions, model, output limit, and one request. Baseline gets only the four case-specific fictional listings and their fictional needs; efficient gets only each case's candidate records retained by the app's deterministic feasibility check and its screening result. No other database records, including user-created records, are read or sent. No reservations, plans, or application state are changed.",
+  "cached_token_note": "The provider returned cached_input_tokens as a separately reported usage detail. This report does not add it to input_tokens or assign it a separate price because authoritative billing semantics and applicable account pricing were not reachable for verification.",
+  "runs": [
+    {
+      "configuration": "baseline_all_four_case_records",
+      "model": "gpt-6-luna",
+      "requests": 1,
+      "tool_calls": 0,
+      "input_tokens": 806,
+      "cached_input_tokens": 0,
+      "output_tokens": 213,
+      "latency_ms": null,
+      "status": "success",
+      "recommendations": [
+        {
+          "case_id": "valid_lamp",
+          "listing_id": "demo-lamp",
+          "reason": "Available quantity is sufficient, the dates overlap, and no vehicle is required."
+        },
+        {
+          "case_id": "date_mismatch",
+          "listing_id": null,
+          "reason": "The pickup dates do not overlap, and no confirmed transport is available for this vehicle-required item."
+        },
+        {
+          "case_id": "transport_conflict",
+          "listing_id": null,
+          "reason": "The listing condition is below the recipient’s stated minimum, and no confirmed transport is available for this vehicle-required item."
+        },
+        {
+          "case_id": "reserved_item",
+          "listing_id": null,
+          "reason": "The listing has no unreserved quantity and is unavailable."
+        }
+      ],
+      "raw_output": "{\"recommendations\":[{\"case_id\":\"valid_lamp\",\"listing_id\":\"demo-lamp\",\"reason\":\"Available quantity is sufficient, the dates overlap, and no vehicle is required.\"},{\"case_id\":\"date_mismatch\",\"listing_id\":null,\"reason\":\"The pickup dates do not overlap, and no confirmed transport is available for this vehicle-required item.\"},{\"case_id\":\"transport_conflict\",\"listing_id\":null,\"reason\":\"The listing condition is below the recipient’s stated minimum, and no confirmed transport is available for this vehicle-required item.\"},{\"case_id\":\"reserved_item\",\"listing_id\":null,\"reason\":\"The listing has no unreserved quantity and is unavailable.\"}]}",
+      "quality": {
+        "cases": 4,
+        "exact_case_decisions": 4,
+        "invalid_or_infeasible_proposals": [],
+        "missed_valid_matches": []
+      },
+      "context_utf8_bytes": 2758
+    },
+    {
+      "configuration": "efficient_case_scoped_candidates",
+      "model": "gpt-6-luna",
+      "requests": 1,
+      "tool_calls": 0,
+      "input_tokens": 581,
+      "cached_input_tokens": 0,
+      "output_tokens": 199,
+      "latency_ms": null,
+      "status": "success",
+      "recommendations": [
+        {
+          "case_id": "valid_lamp",
+          "listing_id": "demo-lamp",
+          "reason": "Available in the needed quantity and date range, in the requested area; no vehicle is required."
+        },
+        {
+          "case_id": "date_mismatch",
+          "listing_id": null,
+          "reason": "No candidate listings are supplied, and the screening record says the pickup dates do not overlap and transport is unavailable."
+        },
+        {
+          "case_id": "transport_conflict",
+          "listing_id": null,
+          "reason": "No candidate listings are supplied, and the screening record says transport is unavailable."
+        },
+        {
+          "case_id": "reserved_item",
+          "listing_id": null,
+          "reason": "No candidate listings are supplied; the screening record says the listing is unavailable and has insufficient unreserved quantity."
+        }
+      ],
+      "raw_output": "{\"recommendations\":[{\"case_id\":\"valid_lamp\",\"listing_id\":\"demo-lamp\",\"reason\":\"Available in the needed quantity and date range, in the requested area; no vehicle is required.\"},{\"case_id\":\"date_mismatch\",\"listing_id\":null,\"reason\":\"No candidate listings are supplied, and the screening record says the pickup dates do not overlap and transport is unavailable.\"},{\"case_id\":\"transport_conflict\",\"listing_id\":null,\"reason\":\"No candidate listings are supplied, and the screening record says transport is unavailable.\"},{\"case_id\":\"reserved_item\",\"listing_id\":null,\"reason\":\"No candidate listings are supplied; the screening record says the listing is unavailable and has insufficient unreserved quantity.\"}]}",
+      "quality": {
+        "cases": 4,
+        "exact_case_decisions": 4,
+        "invalid_or_infeasible_proposals": [],
+        "missed_valid_matches": []
+      },
+      "context_utf8_bytes": 1914
+    }
+  ]
+}

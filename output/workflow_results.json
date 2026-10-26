@@ -1,0 +1,351 @@
+{
+  "browserChecks": {
+    "matchingListingAndNeedCreated": true,
+    "aiPlanProduced": true,
+    "dateMismatchMessage": "Your dates and the listing dates do not overlap. No reservation can be requested for this item.",
+    "transportWarning": "This handoff needs a delivery agreement. The giver must explicitly accept the delivery request.",
+    "unavailableResponse": {
+      "status": 409,
+      "detail": "Not enough quantity remains; another request may have taken it."
+    },
+    "giverAcceptedAndConfirmed": true,
+    "recipientConfirmed": true,
+    "transportRejection": "This item requires a vehicle and no confirmed transport is available.",
+    "dateMismatchApi": {
+      "status": 409,
+      "detail": "The pickup dates do not overlap; no storage arrangement is recorded.; This item requires a vehicle and no confirmed transport is available."
+    },
+    "unavailableApi": {
+      "status": 409,
+      "detail": "Not enough quantity remains; another request may have taken it."
+    }
+  },
+  "final": {
+    "listing": {
+      "id": "f4c8bb51-b0fe-4384-bd74-864cc7b09ec9",
+      "user_id": "demo-outgoing",
+      "item_name": "Browser QA desk lamp",
+      "description": "Browser QA desk lamp \u2014 fictional browser verification fixture.",
+      "category": "Lighting",
+      "quantity": 0,
+      "condition": "Good",
+      "defects": "",
+      "area": "East Rock",
+      "available_from": "2026-10-31",
+      "pickup_deadline": "2026-11-08",
+      "pickup_windows": "Weekday afternoons",
+      "time_from": "10:00",
+      "time_until": "14:00",
+      "requires_vehicle": false,
+      "can_deliver": false,
+      "dimensions": "Standard desk lamp",
+      "status": "available",
+      "is_demo": true,
+      "created_at": "2026-10-25T18:12:42.650542+00:00",
+      "display_name": "Alex (demo giver)",
+      "owner_is_demo": true,
+      "remaining_quantity": 0,
+      "public_status": "completed"
+    },
+    "need_visible_open": null,
+    "handoff": {
+      "id": "4b6bbc58-0bea-4ee0-845f-2c3d95baf311",
+      "listing_id": "f4c8bb51-b0fe-4384-bd74-864cc7b09ec9",
+      "need_id": "372f1a61-45c5-456f-b1b8-76ce8ce520ed",
+      "recipient_id": "demo-incoming",
+      "quantity": 1,
+      "status": "completed",
+      "transport_plan": "easy to carry",
+      "pickup_window": "2026-11-01 12:00",
+      "giver_confirmed": true,
+      "recipient_confirmed": true,
+      "is_demo": 1,
+      "created_at": "2026-10-25T18:13:02.719918+00:00",
+      "updated_at": "2026-10-25T18:13:04.441634+00:00",
+      "item_name": "Browser QA desk lamp",
+      "area": "East Rock",
+      "condition": "Good",
+      "giver_id": "demo-outgoing",
+      "giver_name": "Alex (demo giver)",
+      "recipient_name": "Jordan (demo recipient)",
+      "is_giver": false
+    },
+    "plans": [
+      {
+        "id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+        "direction": "move_in",
+        "status": "completed",
+        "created_at": "2026-10-25T18:12:44.225458+00:00",
+        "result": {
+          "matches": [
+            {
+              "listing_id": "f4c8bb51-b0fe-4384-bd74-864cc7b09ec9",
+              "need_id": "372f1a61-45c5-456f-b1b8-76ce8ce520ed",
+              "quantity": 1,
+              "why": "Good-condition desk lamp in East Rock; availability overlaps the move-in window. This recommendation does not reserve the item or confirm an appointment.",
+              "next_action": "Review the details, then request the item if they work for you.",
+              "issues": [],
+              "listing": {
+                "item_name": "Browser QA desk lamp",
+                "category": "Lighting",
+                "area": "East Rock",
+                "is_demo": true
+              },
+              "need": {
+                "item_name": "Browser QA desk lamp need",
+                "area": "East Rock",
+                "is_demo": true
+              },
+              "same_giver_group_size": 1
+            }
+          ],
+          "possible_matches": [],
+          "rejected_proposals": [],
+          "unmatched": [],
+          "resources": [],
+          "missing_info": [],
+          "usage": {
+            "model": "gpt-6-luna",
+            "requests": [
+              {
+                "model": "gpt-6-luna",
+                "input_tokens": 641,
+                "cached_input_tokens": 0,
+                "output_tokens": 69,
+                "latency_ms": 5030,
+                "tool_calls": 1,
+                "tool_names": [
+                  "retrieve_selected_needs"
+                ],
+                "status": "success"
+              },
+              {
+                "model": "gpt-6-luna",
+                "input_tokens": 877,
+                "cached_input_tokens": 0,
+                "output_tokens": 65,
+                "latency_ms": 3457,
+                "tool_calls": 1,
+                "tool_names": [
+                  "retrieve_available_listings"
+                ],
+                "status": "success"
+              },
+              {
+                "model": "gpt-6-luna",
+                "input_tokens": 1126,
+                "cached_input_tokens": 0,
+                "output_tokens": 77,
+                "latency_ms": 3838,
+                "tool_calls": 1,
+                "tool_names": [
+                  "check_match"
+                ],
+                "status": "success"
+              },
+              {
+                "model": "gpt-6-luna",
+                "input_tokens": 1223,
+                "cached_input_tokens": 1123,
+                "output_tokens": 105,
+                "latency_ms": 2980,
+                "tool_calls": 1,
+                "tool_names": [
+                  "validate_proposed_plan"
+                ],
+                "status": "success"
+              },
+              {
+                "model": "gpt-6-luna",
+                "input_tokens": 1445,
+                "cached_input_tokens": 1148,
+                "output_tokens": 201,
+                "latency_ms": 2589,
+                "tool_calls": 0,
+                "tool_names": [],
+                "status": "success"
+              }
+            ],
+            "total_input_tokens": 5312,
+            "total_cached_input_tokens": 2271,
+            "total_output_tokens": 517,
+            "cost_usd": null,
+            "pricing_status": "Pricing not verified for this Portkey account/model."
+          },
+          "action_summary": "Recommendations are proposals only. Request items through the reservation workflow; both people must confirm the handoff."
+        }
+      }
+    ],
+    "usage": [
+      {
+        "id": "00ca375d-794d-42af-9ad7-5cd51dfbe936",
+        "plan_id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+        "model": "gpt-6-luna",
+        "input_tokens": 1445,
+        "cached_input_tokens": 1148,
+        "output_tokens": 201,
+        "latency_ms": 2589,
+        "tool_calls": 0,
+        "status": "success",
+        "created_at": "2026-10-25T18:13:02.180785+00:00",
+        "tool_names": [],
+        "direction": "move_in"
+      },
+      {
+        "id": "a8a22285-99a9-40e2-8c05-cfd7f7c027fe",
+        "plan_id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+        "model": "gpt-6-luna",
+        "input_tokens": 1223,
+        "cached_input_tokens": 1123,
+        "output_tokens": 105,
+        "latency_ms": 2980,
+        "tool_calls": 1,
+        "status": "success",
+        "created_at": "2026-10-25T18:12:59.582231+00:00",
+        "tool_names": [
+          "validate_proposed_plan"
+        ],
+        "direction": "move_in"
+      },
+      {
+        "id": "02481df3-c5ed-43e9-82ef-b4141459c438",
+        "plan_id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+        "model": "gpt-6-luna",
+        "input_tokens": 1126,
+        "cached_input_tokens": 0,
+        "output_tokens": 77,
+        "latency_ms": 3838,
+        "tool_calls": 1,
+        "status": "success",
+        "created_at": "2026-10-25T18:12:56.595974+00:00",
+        "tool_names": [
+          "check_match"
+        ],
+        "direction": "move_in"
+      },
+      {
+        "id": "e0d92e37-09de-4f89-99e8-7c50b628314f",
+        "plan_id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+        "model": "gpt-6-luna",
+        "input_tokens": 877,
+        "cached_input_tokens": 0,
+        "output_tokens": 65,
+        "latency_ms": 3457,
+        "tool_calls": 1,
+        "status": "success",
+        "created_at": "2026-10-25T18:12:52.751932+00:00",
+        "tool_names": [
+          "retrieve_available_listings"
+        ],
+        "direction": "move_in"
+      },
+      {
+        "id": "9939079e-89ad-4857-9f94-73ff199ea824",
+        "plan_id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+        "model": "gpt-6-luna",
+        "input_tokens": 641,
+        "cached_input_tokens": 0,
+        "output_tokens": 69,
+        "latency_ms": 5030,
+        "tool_calls": 1,
+        "status": "success",
+        "created_at": "2026-10-25T18:12:49.291925+00:00",
+        "tool_names": [
+          "retrieve_selected_needs"
+        ],
+        "direction": "move_in"
+      }
+    ]
+  },
+  "finalDatabaseVerification": {
+    "listing": {
+      "id": "f4c8bb51-b0fe-4384-bd74-864cc7b09ec9",
+      "item_name": "Browser QA desk lamp",
+      "quantity": 0,
+      "status": "available",
+      "is_demo": 1,
+      "public_status": "completed"
+    },
+    "need": {
+      "id": "372f1a61-45c5-456f-b1b8-76ce8ce520ed",
+      "item_name": "Browser QA desk lamp need",
+      "quantity": 1,
+      "status": "fulfilled",
+      "is_demo": 1
+    },
+    "reservation": {
+      "id": "4b6bbc58-0bea-4ee0-845f-2c3d95baf311",
+      "status": "completed",
+      "quantity": 1,
+      "giver_confirmed": 1,
+      "recipient_confirmed": 1,
+      "is_demo": 1
+    },
+    "plan": {
+      "id": "fc9f3fcf-b7b6-490c-820f-a15c5ddb9eb3",
+      "direction": "move_in",
+      "status": "completed",
+      "created_at": "2026-10-25T18:12:44.225458+00:00"
+    },
+    "provider_requests": [
+      {
+        "model": "gpt-6-luna",
+        "input_tokens": 641,
+        "cached_input_tokens": 0,
+        "output_tokens": 69,
+        "latency_ms": 5030,
+        "tool_calls": 1,
+        "tool_names": [
+          "retrieve_selected_needs"
+        ],
+        "status": "success"
+      },
+      {
+        "model": "gpt-6-luna",
+        "input_tokens": 877,
+        "cached_input_tokens": 0,
+        "output_tokens": 65,
+        "latency_ms": 3457,
+        "tool_calls": 1,
+        "tool_names": [
+          "retrieve_available_listings"
+        ],
+        "status": "success"
+      },
+      {
+        "model": "gpt-6-luna",
+        "input_tokens": 1126,
+        "cached_input_tokens": 0,
+        "output_tokens": 77,
+        "latency_ms": 3838,
+        "tool_calls": 1,
+        "tool_names": [
+          "check_match"
+        ],
+        "status": "success"
+      },
+      {
+        "model": "gpt-6-luna",
+        "input_tokens": 1223,
+        "cached_input_tokens": 1123,
+        "output_tokens": 105,
+        "latency_ms": 2980,
+        "tool_calls": 1,
+        "tool_names": [
+          "validate_proposed_plan"
+        ],
+        "status": "success"
+      },
+      {
+        "model": "gpt-6-luna",
+        "input_tokens": 1445,
+        "cached_input_tokens": 1148,
+        "output_tokens": 201,
+        "latency_ms": 2589,
+        "tool_calls": 0,
+        "tool_names": [],
+        "status": "success"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "checked_on": "2026-10-25",
+  "model": "gpt-6-luna",
+  "price_source": "https://developers.openai.com/api/docs/pricing",
+  "cache_accounting_source": "https://developers.openai.com/api/docs/guides/prompt-caching",
+  "published_standard_short_context_rates_usd_per_1m_tokens": {
+    "input": "0.10",
+    "cached_read": "0.01",
+    "cache_write_30m": "0.125",
+    "cache_write_12h": "0.25",
+    "output": "0.50"
+  },
+  "measured_tool_using_plan": {
+    "plan_id": "604fc8bd-bf54-4390-a93f-ae51703c1890",
+    "status_at_run": "completed",
+    "provider_requests": 5,
+    "tool_calls": 4,
+    "input_tokens": 5436,
+    "cached_input_tokens": 2318,
+    "uncached_or_write_tokens_not_distinguished": 3118,
+    "output_tokens": 600,
+    "latency_ms_sum": 14031,
+    "cache_write_tokens": null,
+    "cache_write_status": "Not stored by the application; exact token-based account cost cannot be reconstructed from these logs."
+  },
+  "public_rate_reference_cost_usd": {
+    "low_if_unreported_input_is_ordinary": "0.00063498",
+    "high_if_all_unreported_input_is_30m_cache_write": "0.00071293",
+    "not_a_portkey_invoice": true,
+    "caveats": [
+      "The 2318 reported cached tokens are a subset of the 5436 total input tokens and are priced once as cached reads.",
+      "The app did not persist cache_write_tokens, so the split of the remaining 3118 input tokens between ordinary input and cache writes is unknown.",
+      "These calculations apply OpenAI's public Standard short-context rates and are reference estimates only; Portkey/course-key billing adjustments were not available."
+    ]
+  },
+  "monthly_scenarios": {
+    "one_user_month_20_runs": {
+      "runs": 20,
+      "public_rate_reference_usd_range": [
+        "0.012700",
+        "0.014259"
+      ],
+      "assumption": "Every run has the same token profile as the measured run; public OpenAI Standard short-context rates; no Portkey/account discount or markup."
+    },
+    "100_users_20_runs_each": {
+      "runs": 2000,
+      "public_rate_reference_usd_range": [
+        "1.269960",
+        "1.425860"
+      ],
+      "assumption": "Every run has the same token profile as the measured run; public OpenAI Standard short-context rates; no Portkey/account discount or markup."
+    },
+    "10000_users_20_runs_each": {
+      "runs": 200000,
+      "public_rate_reference_usd_range": [
+        "126.996000",
+        "142.586000"
+      ],
+      "assumption": "Every run has the same token profile as the measured run; public OpenAI Standard short-context rates; no Portkey/account discount or markup."
+    }
+  },
+  "comparison_reference_costs_usd": [
+    {
+      "configuration": "baseline_all_four_case_records",
+      "reference_cost_usd": "0.0001871"
+    },
+    {
+      "configuration": "efficient_case_scoped_candidates",
+      "reference_cost_usd": "0.0001576"
+    }
+  ]
+}

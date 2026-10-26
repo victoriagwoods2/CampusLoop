@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-10-25T17:10:18.311024+00:00",
+  "suite": "Python standard-library unittest; deterministic checks only",
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "cases": [
+    {
+      "test": "test_atomic_quantity_guard_prevents_duplicate_allocation",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_car_free_recipient_cannot_collect_bulky_item",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_date_mismatch_is_incompatible",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_demo_reset_preserves_real_user_listing",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_fake_record_ids_and_incompatible_proposals_are_rejected",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_malicious_listing_is_marked_untrusted_and_contact_is_redacted",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_non_overlapping_local_pickup_hours_are_incompatible",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_oversized_plan_is_rejected_before_a_model_call",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_reserved_demo_item_has_zero_free_quantity",
+      "status": "passed",
+      "failure": null
+    },
+    {
+      "test": "test_seeded_data_is_labeled_and_reproducible",
+      "status": "passed",
+      "failure": null
+    }
+  ],
+  "limitations": [
+    "No live Portkey request has been made; prompt-injection resistance by the model is unverified.",
+    "The frontend was production-built but not exercised in a real browser session.",
+    "Donation-source acceptance details remain unverified and are labeled in the app."
+  ]
+}

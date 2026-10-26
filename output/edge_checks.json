@@ -1,0 +1,19 @@
+{
+  "transportConflict": {
+    "ui": {
+      "toast": "!\nThis item requires a vehicle and no confirmed transport is available.\n×",
+      "modal": "×\n\nA CLEAR ASK MAKES A GOOD HANDOFF\n\nRequest Browser QA van-needed lamp\n\nThe giver will review your request. It is not reserved until they accept.\n\n✳\nBrowser QA van-needed lamp\nGood · East Rock · until Nov 8, 2026\nYour need (optional)\nNo posted need\nBrowser QA van transport conflict need · Nov 1, 2026 – Nov 5, 2026\nBrowser QA late arrival need · Nov 14, 2026 – Nov 18, 2026\nCookware · Aug 2, 2027 – Aug 6, 2027\nDesk lamp · Aug 2, 2027 – Aug 6, 2027\nBookcase · Aug 2, 2027 – Aug 6, 2027\nReading chair · Aug 2, 2027 – Aug 6, 2027\nPickup date\nPickup time · New Haven\nQuantity\nThis handoff needs a delivery agreement. The giver must explicitly accept the delivery request.\nSend request ↗"
+    },
+    "api": "!\nThis item requires a vehicle and no confirmed transport is available.\n×"
+  },
+  "apiChecks": {
+    "dateMismatch": {
+      "status": 409,
+      "detail": "The pickup dates do not overlap; no storage arrangement is recorded.; This item requires a vehicle and no confirmed transport is available."
+    },
+    "unavailable": {
+      "status": 409,
+      "detail": "Not enough quantity remains; another request may have taken it."
+    }
+  }
+}

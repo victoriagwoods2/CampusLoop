@@ -1,0 +1,2 @@
+Command: npm run build (from frontend/)
+Result: TypeScript check passed; Vite production build passed.

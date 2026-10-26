@@ -1,0 +1,57 @@
+{
+  "browser": "Chrome headless via CDP",
+  "workflow": {
+    "listing_created": "Walnut side table",
+    "request_created": "Small side table",
+    "request_status": "requested then accepted",
+    "giver_confirmed": true,
+    "recipient_confirmed": true,
+    "final_reservation_status": "completed",
+    "final_listing_quantity": 0,
+    "final_need_status": "fulfilled"
+  },
+  "real_portkey_plan": {
+    "id": "604fc8bd-bf54-4390-a93f-ae51703c1890",
+    "model": "gpt-6-luna",
+    "direction": "move_in",
+    "status_at_run": "completed",
+    "selected_listing_ids": [],
+    "selected_need_ids": [
+      "4091e5e3-cc38-449a-814a-dac757dc0d67"
+    ],
+    "matches": [
+      {
+        "listing": "Floor lamp",
+        "need": "Lamp",
+        "quantity": 1,
+        "why": "The working floor lamp matches the lighting request. Both records list East Rock, and their dates and times overlap."
+      }
+    ],
+    "provider_requests": 5,
+    "input_tokens": 5436,
+    "cached_input_tokens": 2318,
+    "output_tokens": 600,
+    "tool_names": [
+      "check_match",
+      "retrieve_available_listings",
+      "retrieve_selected_needs",
+      "validate_proposed_plan"
+    ],
+    "provider_statuses": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "success"
+    ]
+  },
+  "screenshots": "See refined_screenshot_index.json and output/screenshots/refined-*.png",
+  "cleanup": "Temporary browser-created fixture records are removed after preserving this result and screenshots.",
+  "post_cleanup": {
+    "browser_qa_listing_and_need_count": 0,
+    "temporary_records_removed": 4,
+    "temporary_reservation_removed": 1,
+    "provider_plan_history_retained_as_stale": true,
+    "user_created_listing_preserved": true
+  }
+}
